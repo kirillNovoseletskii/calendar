@@ -7,7 +7,7 @@
             <button class="pre-button" @click="pre_month">
                 <font-awesome-icon :icon="['fas', 'caret-left' ]" />
             </button>  
-                <p class="choise-data">
+                <p class="watch-data">
                     {{getMonth}} {{getYear}}
                 </p>
             <button class="next-button" @click="next_month">
@@ -30,6 +30,12 @@
                 {{day_number}}
             </li>
         </ul>
+        <p class="choised-date ru" v-if='lang=="en"'>
+            Choised date: {{mounthesEN[pre_state.month-1]}} {{pre_state.year}} {{pre_state.day}}
+        </p>
+         <p class="choised-date ru" v-else>
+            Выбранная дата: {{mounthesRU[pre_state.month-1]}} {{pre_state.year}} {{pre_state.day}}
+        </p>
     </div>
 </template>
 
@@ -135,6 +141,11 @@ export default {
         top: 30px;
         border: 1px solid black;
         padding: 3px;
+    }
+    .choised-date{
+        position: relative;
+        margin: -3px;
+        font-size: 12px;
     }
     .calendar-box{
         width: 200px;
