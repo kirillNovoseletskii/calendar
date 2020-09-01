@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Test Task(calendar)</h1>
-      <calendar/>
+      <calendar :year='2020' :month='2' :day='23'/>
   </div>
 </template>
 <script>

@@ -41,6 +41,7 @@
 
 <script>
 export default {
+    props: ['year', 'month', 'day'],
     data() {
         return {
             date: {
