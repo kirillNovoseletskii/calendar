@@ -5,14 +5,13 @@
     </div>
         <div class="calendar-header">
             <button class="pre-button" @click="pre_month">
-                <i class="fas fa-caret-down"></i>
+                <font-awesome-icon :icon="['fas', 'caret-left' ]" />
             </button>  
                 <p class="choise-data">
                     {{getMonth}} {{getYear}}
                 </p>
             <button class="next-button" @click="next_month">
-                <i class="fas fa-caret-down"></i>
-                +
+                <font-awesome-icon :icon="['fas','caret-right' ]" />
             </button>
         </div>
 
@@ -35,7 +34,6 @@
 </template>
 
 <script>
-import arrowLeft from './arrowLeft'
 export default {
     data() {
         return {
@@ -100,7 +98,6 @@ export default {
             this.pre_state.day = this.date.day
         },
         pre_month(){
-            console.log(this.date.month, this.date.year)
             if(this.date.month<2){
                 this.date.month=12
                 this.date.year--
@@ -109,7 +106,6 @@ export default {
             }
         },
         next_month(){
-            console.log(this.date.month, this.date.year)
             if(this.date.month>10){
                 this.date.month=1
                 this.date.year++
